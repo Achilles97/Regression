@@ -24,13 +24,6 @@ x[:, 1] = encode_x.fit_transform(x[:, 1])
 x[:, 8] = encode_x.fit_transform(x[:, 8])
 x = x[:, (0,1,2,8,9)]
 
-onehotencoder = OneHotEncoder(categorical_features = [0])
-x = onehotencoder.fit_transform(x).toarray()
-x = x[:, 1:]
-onehotencoder = OneHotEncoder(categorical_features = [47])
-x = onehotencoder.fit_transform(x).toarray()
-x = x[:, 1:]
-
 y = y.reshape(-1, 1)
 
 from sklearn.cross_validation import ShuffleSplit
